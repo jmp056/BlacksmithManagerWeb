@@ -10,11 +10,11 @@ namespace BlacksmithManagerWeb.Data
     {
         [Key]
         public int ClienteId { get; set; }
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public string Cedula { get; set; }
-        public DateTime FechaIngreso { get; set; }
+        public string FechaIngreso { get; set; }
         public string Celular { get; set; }
         public string Telefono { get; set; }
-        public string Emil { get; set; }
+        public string Email { get; set; }
     }
 }

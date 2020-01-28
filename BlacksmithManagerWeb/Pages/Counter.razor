@@ -1,4 +1,5 @@
-﻿@page "/counter"
+﻿@using BlacksmithManagerWeb.Data
+@page "/counter"
 
 <h1>Counter</h1>
 
@@ -12,5 +13,19 @@
     private void IncrementCount()
     {
         currentCount++;
+
+
+        Contexto contexto = new Contexto();
+
+        contexto.Clientes.Add(new Clientes()
+        {
+            Nombres = "Jonathan Maria",
+            Cedula = "402-2642060-8",
+            FechaIngreso = "01/27/2020",
+            Celular = "829-418-7599",
+            Telefono = "809-725-0440",
+            Email = "ymphabbo@hotmail.com"
+        });
+        contexto.SaveChanges();
     }
 }
