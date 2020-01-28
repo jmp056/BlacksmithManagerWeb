@@ -8,7 +8,6 @@ create table Clientes(
 	Cedula varchar (13),
 	Celular varchar(12),
 	Telefono varchar(12),
-	Email varchar(50),
-	FechaIngreso datetime
+	Email varchar(50)
 )
 select * from Clientes
