@@ -8,10 +8,10 @@ namespace BlacksmithManagerWeb.Data
 {
     public class Contexto : DbContext
     {
-
+        public DbSet<Clientes> Clientes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=JMP-PC\SQLEXPRESS; Database = Personas; Trusted_Connection =true");
+            optionsBuilder.UseSqlServer(@"Server=JMP-PC\SQLEXPRESS; Database = BlacksmithManagerWeb; Trusted_Connection =true");
         }
     }
 }
