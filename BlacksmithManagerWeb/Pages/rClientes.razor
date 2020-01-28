@@ -4,9 +4,7 @@
 
 <h1>Registro de Clientes</h1>
 
-<p>Current count: @currentCount</p>
-
-<EditForm Model="@Cliente" OnInvalidSubmit="@IncrementCount">
+<EditForm Model="@Cliente" OnInvalidSubmit="@Guardar">
     <DataAnnotationsValidator/>
 
     <div class="form-group">
@@ -40,41 +38,17 @@
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" @onclick="Guardar" >Guardar</button>
     </div>
 </EditForm>
 
-
-<button class="btn btn-primary" @onclick="IncrementCount">Guardar</button>
-
 @code {
     private Clientes Cliente = new Clientes();
-    private int currentCount = 0;
 
-    private void IncrementCount()
+    private void Guardar()
     {
-        currentCount++;
         Contexto contexto = new Contexto();
-        
 
-
-       
-        /*Contexto contexto = new Contexto();
-
-        contexto.Clientes.Add(new Clientes()
-        {
-            Nombres = "Jonathan Maria",
-            Cedula = "402-2642060-8",
-            FechaIngreso = "01/27/2020",
-            Celular = "829-418-7599",
-            Telefono = "809-725-0440",
-            Email = "ymphabbo@hotmail.com"
-        });
-        contexto.SaveChanges();*/
-        
-         
-         
-         
 
     }
 }
