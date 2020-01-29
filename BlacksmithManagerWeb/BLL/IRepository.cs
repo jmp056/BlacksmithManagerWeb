@@ -8,8 +8,7 @@ namespace BlacksmithManagerWeb.BLL
     {
         public bool Guardar(T entity);
         public bool Modificar(T entity);
-        public bool Eliminar(T entity);
+        //public bool Eliminar(T entity);
         public T Buscar(int Id);
-        public List<T> GetList(Expression<Func<T, bool>> expression);
     }
 }
