@@ -1,4 +1,5 @@
-﻿@using BlacksmithManagerWeb.Data
+﻿@using BlacksmithManagerWeb.Data;
+@using BlacksmithManagerWeb.BLL
 
 @page "/RClientes"
 
@@ -51,12 +52,29 @@
 
 
 @code {
+
     private Clientes Cliente = new Clientes();
 
     private void Guardar()
     {
-        Contexto contexto = new Contexto();
+        RepositorioBase<Clientes> Repositoio = new RepositorioBase<Clientes>();
+
+        try
+        {
+            if (Repositoio.Guardar(Cliente))
+                Limpiar();
+        }
 
 
+        catch (Exception)
+        {
+
+        }
     }
+
+    private void Limpiar()
+    {
+        Cliente = new Clientes();
+    }
+
 }
