@@ -2,45 +2,53 @@
 
 @page "/RClientes"
 
-<h1>Registro de Clientes</h1>
+<h1 align="center" >Registro de Clientes</h1>
 
 <EditForm Model="@Cliente" OnInvalidSubmit="@Guardar">
-    <DataAnnotationsValidator/>
 
-    <div class="form-group">
-        <label for="Nombres">Nombres</label>
-        <input @bind-value="Cliente.Nombres" class="form-control col-6" />
-        <ValidationMessage For="@(() => Cliente.Nombres)"/>
-    </div>
+    <DataAnnotationsValidator />
 
-    <div class="form-group">
-        <label for="Cedula">Cedula</label>
-        <input @bind-value="Cliente.Cedula" placeholder="000-0000000-0" class="form-control col-6" />
-        <ValidationMessage For="@(() => Cliente.Cedula)" />
-    </div>
+    <div align="center">
 
-    <div class="form-group">
-        <label for="Celular">Celular</label>
-        <input @bind-value="Cliente.Celular" placeholder="000-000-0000" class="form-control col-6" />
-        <ValidationMessage For="@(() => Cliente.Celular)" />
-    </div>
+        <div class="form-group">
+            <label for="Nombres">Nombres</label>
+            <input @bind-value="Cliente.Nombres" class="form-control col-6" />
+            <ValidationMessage For="@(() => Cliente.Nombres)" />
+        </div>
 
-    <div class="form-group">
-        <label for="Telefono">Telefono</label>
-        <input @bind-value="Cliente.Telefono" placeholder="000-000-0000" class="form-control col-6" />
-        <ValidationMessage For="@(() => Cliente.Telefono)" />
-    </div>
+        <div class="form-group">
+            <label for="Cedula">Cedula</label>
+            <input @bind-value="Cliente.Cedula" placeholder="000-0000000-0" class="form-control col-6" />
+            <ValidationMessage For="@(() => Cliente.Cedula)" />
+        </div>
 
-    <div class="form-group">
-        <label for="Email">Email</label>
-        <input @bind-value="Cliente.Email" placeholder="Ejemplo@hotmail.com " class="form-control col-6" />
-        <ValidationMessage For="@(() => Cliente.Email)" />
-    </div>
+        <div class="form-group">
+            <label for="Celular">Celular</label>
+            <input @bind-value="Cliente.Celular" placeholder="000-000-0000" class="form-control col-6" />
+            <ValidationMessage For="@(() => Cliente.Celular)" />
+        </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary" @onclick="Guardar" >Guardar</button>
+        <div class="form-group">
+            <label for="Telefono">Telefono</label>
+            <input @bind-value="Cliente.Telefono" placeholder="000-000-0000" class="form-control col-6" />
+            <ValidationMessage For="@(() => Cliente.Telefono)" />
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input @bind-value="Cliente.Email" placeholder="Ejemplo@hotmail.com " class="form-control col-6" />
+            <ValidationMessage For="@(() => Cliente.Email)" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" @onclick="Guardar">Guardar</button>
+        </div>
     </div>
+    
 </EditForm>
+
+
+
 
 @code {
     private Clientes Cliente = new Clientes();
